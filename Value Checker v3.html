@@ -1,0 +1,191 @@
+<html>
+
+<head>
+
+.
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#first').blur(function () {
+                CheckMe();
+                
+            });
+
+            $('#second').blur(function () {
+               CheckMe();
+            });
+
+
+            $('#idbutton').click (function () {
+                var f = $('#first').val();
+                f = f.replace(/\s/g, '') ;
+                $('#first').val(f);
+                var s = $('#second').val();
+                s = s.replace(/\s/g, '') ;
+                $('#second').val(s);
+                CheckMe();
+                
+            })
+
+
+        });
+        function CheckMe() {
+            var f = $('#first').val();
+            f = f.replace(/\s/g, '') ;
+            var s = $('#second').val();
+            s = s.replace(/\s/g, '') ;
+            if (f == s) {
+                $('#first').css("background-color", "#00ff00");
+                $('#second').css("background-color", "#00ff00");
+
+            }
+            else {
+                $('#first').css("background-color", "#ff0000");
+                $('#second').css("background-color", "#ff0000");
+
+
+
+            }
+        }
+
+        $(document).ready(function () {
+
+$('#third').blur(function () {
+    CheckMe();
+    
+});
+
+$('#fourth').blur(function () {
+   CheckMe();
+});
+
+
+$('#idbutton').click (function () {
+    var z = $('#third').val();
+    z = z.replace(/\s/g, '') ;
+    $('#third').val(f);
+    var x = $('#fourth').val();
+    x = x.replace(/\s/g, '') ;
+    $('#fourth').val(x);
+    CheckMe();
+    
+})
+
+
+});
+function CheckMe() {
+var z = $('#third').val();
+z = z.replace(/\s/g, '') ;
+var x = $('#fourth').val();
+x = x.replace(/\s/g, '') ;
+if (x=="" & z==""){$('#third').css("background-color", "#ffffff");
+    $('#fourth').css("background-color", "#ffffff");
+}
+else if (z.includes(x)) {
+    $('#third').css("background-color", "#00ff00");
+    $('#fourth').css("background-color", "#00ff00");
+
+}
+else {
+    $('#third').css("background-color", "#ff0000");
+    $('#fourth').css("background-color", "#ff0000");
+
+
+
+}
+}
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        Ref Data Checker
+    </h1>
+
+<table> 
+    <tr>
+        <td colspan=2 >
+        <b>Instructions for Ref Data Document Check</b>: Copy and Paste entire RefData document in both boxes. 
+        <br/>
+        <br/>
+        <span style='color:green'>GREEN</span> : RefData Matching  <span style='color:red'>RED</span> : RefData Mismatch 
+<br/> 
+<br/>
+        </td>
+    </tr>
+    <tr> 
+        <td> 
+            <label for="first"> App Server Ref Data </label>
+
+        </td>
+        <td> 
+            <label for="second"> Github Ref Data  </label>
+
+        </td>
+    </tr>
+    <tr>
+        <td> 
+            
+
+            <textarea id='first' rows="15" cols="50" > </textarea>
+        </td>
+        
+        <td>
+            <textarea id='second' rows="15" cols="50" >
+            </textarea>
+        </td>
+    </tr>
+    
+    
+</table>
+<br> 
+<button id='idbutton'>Remove Formatting</button>
+<br> 
+<br>
+
+<table> 
+    <tr>
+        <td colspan=2 >
+        <b>Instructions for Ref Data Value Check</b>:  
+        <br/>
+        <br/>
+        Paste RefData Value in Box 2 & RefData document in Box 1. If Box 1 contains RefData value from Box 2, both boxes will be green. If value from Box 2 is not found within Box 1, both boxes will be red.
+        
+<br/> 
+<br/>
+        </td>
+    </tr>
+    <tr> 
+        <td> 
+            <label for="third"> Ref Data </label>
+
+        </td>
+        <td> 
+            <label for="fourth"> Ref Data Values  </label>
+
+        </td>
+    </tr>
+    <tr>
+        
+
+        <td> 
+            <textarea id='third' rows="15" cols="50" >
+            </textarea>
+        </td>
+        <td>
+            <textarea id='fourth' rows="15" cols="50" >
+            </textarea>
+        </td>
+    </tr>
+    
+    
+</table>
+
+</body>
+
+<script>
+</script>
+
+</html>
